@@ -1,0 +1,16 @@
+name: Debug Runner
+
+on: [push, workflow_dispatch] # Runs on push or manual trigger
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Add your command before this step to see the state before it runs, 
+      # or after to debug a failure.
+      
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
